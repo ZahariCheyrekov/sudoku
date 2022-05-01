@@ -8,6 +8,7 @@ function boardInit() {
             let square = document.createElement('div');
             square.id = row.toString() + '-' + col.toString();
             square.classList.add('squares');
+            document.getElementById('board').appendChild(square);
         }
     }
 }
