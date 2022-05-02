@@ -44,3 +44,8 @@ body {
 .displayPuzzleSquares {
     background-color: lightgray;
 }
+
+.numSelected {
+    background-color: gray;
+    color: white;
+}
