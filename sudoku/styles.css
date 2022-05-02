@@ -10,3 +10,13 @@ body {
     padding: 0;
     overflow: hidden; /* => remove for scrolling*/
 }
+
+#title {
+    margin: 0;
+    padding-right: 0px;
+    padding-left: 250px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: rgb(27, 68, 107);
+    border-bottom: 2px solid rgba(100, 63, 150, .1);
+}
