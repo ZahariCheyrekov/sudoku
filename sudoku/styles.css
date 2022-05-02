@@ -58,3 +58,16 @@ body {
     margin-bottom: 25px;
     flex-wrap: wrap;
 }
+
+.numpadButtons {
+    font-size: 22px;
+    width: 50px;
+    height: 50px;
+    margin-left: 9px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 2px;
+}
