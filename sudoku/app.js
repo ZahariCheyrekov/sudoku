@@ -75,3 +75,19 @@ function selectNumber() {
     buttonSelected = this;
     buttonSelected.classList.add('numSelected');
 }
+
+function selectSquare() {
+    if (buttonSelected) {
+        let coords = this.id.split('-');
+        let row = Number(coords[0]);
+        let col = Number(coords[1]);
+
+        if (puzzle[row][col] == 0) {
+            if (buttonSelected.textContent == 'X') {
+                this.innerText = '';
+            } else {
+                this.innerText = Number(buttonSelected.textContent);
+            }
+        }
+    }
+}
