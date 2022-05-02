@@ -81,3 +81,7 @@ body {
     background-color: gray;
     color: white;
 }
+
+#deleteBtn:hover {
+    color: black;
+}
