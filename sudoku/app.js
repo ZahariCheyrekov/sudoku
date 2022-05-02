@@ -33,3 +33,19 @@ function displayBoard() {
         }
     }
 }
+
+function displayPuzzle() {
+    const cells = document.querySelectorAll('.squares');
+
+    cells.forEach((cell) => {
+        let cellId = cell.id;
+        let coords = cellId.split('-');
+        let row = Number(coords[0]);
+        let col = Number(coords[1]);
+
+        if (puzzle[row][col] != 0) {
+            document.getElementById(cellId).textContent = puzzle[row][col];
+            cell.classList.add('displayPuzzleSquares');
+        }
+    });
+}
