@@ -9,3 +9,9 @@ const puzzle = [
     [0, 9, 7, 0, 2, 0, 0, 0, 0],
     [6, 0, 0, 0, 0, 3, 0, 7, 0]
 ];
+
+let buttonSelected = null;
+
+window.onload = function () {
+    start();
+};
