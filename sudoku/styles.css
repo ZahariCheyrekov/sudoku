@@ -29,3 +29,14 @@ body {
     flex-wrap: wrap;
     padding-top: 70px;
 }
+
+.squares {
+    width: 58px;
+    height: 58px;
+    border: 1px solid darkgray;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
