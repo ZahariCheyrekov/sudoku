@@ -67,3 +67,11 @@ function displayNumpad() {
     deleteBtn.addEventListener('click', selectNumber);
     document.getElementById('numpad').appendChild(deleteBtn);
 }
+
+function selectNumber() {
+    if (buttonSelected != null) {
+        buttonSelected.classList.remove('numSelected');
+    }
+    buttonSelected = this;
+    buttonSelected.classList.add('numSelected');
+}
