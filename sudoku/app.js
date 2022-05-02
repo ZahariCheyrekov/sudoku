@@ -49,3 +49,21 @@ function displayPuzzle() {
         }
     });
 }
+
+function displayNumpad() {
+    for (let num = 1; num <= 9; num++) {
+        const number = document.createElement('button');
+        number.textContent = num;
+        number.id = `${num}-button`;
+        number.classList.add('numpadButtons');
+        number.addEventListener('click', selectNumber);
+        document.getElementById('numpad').appendChild(number);
+    }
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'X';
+    deleteBtn.id = 'deleteBtn';
+    deleteBtn.classList.add('numpadButtons');
+    deleteBtn.addEventListener('click', selectNumber);
+    document.getElementById('numpad').appendChild(deleteBtn);
+}
