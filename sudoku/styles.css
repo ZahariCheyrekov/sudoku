@@ -20,3 +20,12 @@ body {
     color: rgb(27, 68, 107);
     border-bottom: 2px solid rgba(100, 63, 150, .1);
 }
+
+#board {
+    margin: 0 auto;
+    width: 540px;
+    height: 540px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 70px;
+}
