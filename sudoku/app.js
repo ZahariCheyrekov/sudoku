@@ -15,3 +15,9 @@ let buttonSelected = null;
 window.onload = function () {
     start();
 };
+
+function start() {
+    displayBoard();
+    displayPuzzle();
+    displayNumpad();
+}
