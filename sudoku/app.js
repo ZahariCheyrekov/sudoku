@@ -92,3 +92,11 @@ function displayNumpad() {
         document.getElementById('numpad').appendChild(button);
     }
 }
+
+function selectNumber() {
+    if (buttonSelected != null) {
+        buttonSelected.classList.remove('numSelected');
+    }
+    buttonSelected = this;
+    buttonSelected.classList.add('numSelected');
+}
