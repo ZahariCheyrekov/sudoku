@@ -108,3 +108,45 @@ body {
     border: 1px solid black;
     border-radius: 2px;
 }
+
+.numpadButtons {
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    margin-left: 9px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+#deleteBtn {
+    background-color: rgb(255, 12, 12);
+    color: white;
+}
+
+.numpadButtons:hover {
+    background-color: gray;
+    color: white;
+}
+
+#deleteBtn:hover {
+    color: black;
+}
+
+.border-bottom {
+    border-bottom: 2px solid black;
+}
+
+.border-right {
+    border-right: 2px solid black;
+}
+
+.entered-numbers {
+    color: rgb(64, 155, 240);
+}
+
+.cell-color {
+    background-color: rgb(194, 225, 253);
+}
