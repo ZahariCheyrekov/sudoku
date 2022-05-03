@@ -74,3 +74,21 @@ function displayPuzzle() {
         }
     });
 }
+
+function displayNumpad() {
+    for (let num = 1; num <= 10; num++) {
+        const button = document.createElement('button');
+
+        if (num == 10) {
+            button.textContent = 'X';
+            button.id = 'deleteBtn';
+        } else {
+            button.textContent = num;
+            button.id = `${num}-button`;
+        }
+
+        button.classList.add('numpadButtons');
+        button.addEventListener('click', selectNumber);
+        document.getElementById('numpad').appendChild(button);
+    }
+}
