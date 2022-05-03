@@ -58,3 +58,19 @@ function displayBoard() {
         }
     }
 }
+
+function displayPuzzle() {
+    const cells = getCells();
+
+    cells.forEach((cell) => {
+        const cellId = cell.id;
+        const coords = getCoordinates(cell);
+
+        if (puzzle[coords.row][coords.col] != 0) {
+            document.getElementById(cellId).textContent = puzzle[coords.row][coords.col];
+            cell.classList.add('displayPuzzleSquares');
+        } else {
+            document.getElementById(cellId).textContent = '';
+        }
+    });
+}
