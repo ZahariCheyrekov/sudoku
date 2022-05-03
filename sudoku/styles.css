@@ -11,3 +11,12 @@ body {
     height: 60px;
     border-bottom: 2px solid rgba(100, 63, 150, .1);
 }
+
+#title_div {
+    float: left;
+    height: 100%;
+    width: 50%;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+}
