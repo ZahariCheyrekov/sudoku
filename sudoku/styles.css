@@ -6,3 +6,8 @@ body {
     margin: 0;
     padding: 0;
 }
+
+#select-bar {
+    height: 60px;
+    border-bottom: 2px solid rgba(100, 63, 150, .1);
+}
