@@ -126,3 +126,11 @@ function enterNumber() {
         }
     }
 }
+
+function getCoordinates(input) {
+    const coords = input.id.split('-');
+    return {
+        row: Number(coords[0]),
+        col: Number(coords[1])
+    }
+}
