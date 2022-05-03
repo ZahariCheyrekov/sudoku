@@ -57,3 +57,7 @@ body {
     justify-content: center;
     border-radius: 5px;
 }
+
+.game-action:hover {
+    background-color: rgb(211, 211, 211, .2);
+}
