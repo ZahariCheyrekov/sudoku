@@ -61,3 +61,12 @@ body {
 .game-action:hover {
     background-color: rgb(211, 211, 211, .2);
 }
+
+#board {
+    margin: 0 auto;
+    width: 524px;
+    height: 524px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 70px;
+}
