@@ -89,3 +89,10 @@ body {
     background-color: gray;
     color: white;
 }
+
+#numpad {
+    width: 600px;
+    height: 58px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
