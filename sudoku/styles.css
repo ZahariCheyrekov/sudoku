@@ -80,3 +80,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.displayPuzzleSquares {
+    background-color: rgb(211, 211, 211, .2);
+}
