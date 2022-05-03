@@ -21,3 +21,17 @@ const solvedPuzzle = [
     [4, 9, 7, 6, 2, 8, 5, 1, 3],
     [6, 5, 8, 4, 1, 3, 2, 7, 9],
 ];
+
+let buttonSelected = null;
+let squareSelected = null;
+
+window.onload = function () {
+    run();
+};
+
+function run() {
+    displayBoard();
+    displayPuzzle();
+    displayNumpad();
+    attachListeners();
+}
