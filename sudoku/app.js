@@ -101,7 +101,6 @@ function selectNumber() {
     buttonSelected.classList.add('numSelected');
 }
 
-
 function selectSquare() {
     if (squareSelected != this) {
         if (squareSelected != null) {
@@ -110,4 +109,20 @@ function selectSquare() {
         squareSelected = this;
     }
     squareSelected.classList.add('cell-color');
+}
+
+function enterNumber() {
+    if (buttonSelected) {
+        const coords = getCoordinates(this);
+
+        if (puzzle[coords.row][coords.col] == 0) {
+            if (buttonSelected.textContent == 'X') {
+                this.innerText = '';
+                this.classList.remove('entered-numbers');
+            } else {
+                this.innerText = Number(buttonSelected.textContent);
+                this.classList.add('entered-numbers');
+            }
+        }
+    }
 }
