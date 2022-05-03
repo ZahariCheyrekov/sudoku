@@ -77,11 +77,4 @@ body {
     color: white;
 }
 
-.numpadButtons:hover {
-    background-color: gray;
-    color: white;
-}
 
-#deleteBtn:hover {
-    color: black;
-}
