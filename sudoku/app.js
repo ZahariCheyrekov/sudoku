@@ -100,3 +100,14 @@ function selectNumber() {
     buttonSelected = this;
     buttonSelected.classList.add('numSelected');
 }
+
+
+function selectSquare() {
+    if (squareSelected != this) {
+        if (squareSelected != null) {
+            squareSelected.classList.remove('cell-color');
+        }
+        squareSelected = this;
+    }
+    squareSelected.classList.add('cell-color');
+}
