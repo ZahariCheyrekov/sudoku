@@ -139,3 +139,17 @@ function attachListeners() {
     document.getElementsByClassName('game-action')[1].addEventListener('click', displayPuzzle);
     document.getElementsByClassName('game-action')[2].addEventListener('click', solvePuzzle);
 }
+
+function solvePuzzle() {
+    const cells = getCells();
+
+    cells.forEach((cell) => {
+        const coords = getCoordinates(cell);
+        document.getElementById(cell.id).textContent = solvedPuzzle[coords.row][coords.col];
+        cell.classList.remove('entered-numbers');
+    });
+}
+
+function getCells() {
+    return document.querySelectorAll('.squares');
+}
