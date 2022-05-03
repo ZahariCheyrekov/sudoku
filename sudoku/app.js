@@ -35,3 +35,26 @@ function run() {
     displayNumpad();
     attachListeners();
 }
+
+function displayBoard() {
+    for (let row = 0; row < 9; row++) {
+        for (let col = 0; col < 9; col++) {
+
+            let square = document.createElement('div');
+            square.id = row.toString() + '-' + col.toString();
+            square.classList.add('squares');
+
+            if (row == 2 || row == 5) {
+                square.classList.add('border-bottom');
+            }
+
+            if (col == 2 || col == 5) {
+                square.classList.add('border-right');
+            }
+
+            square.addEventListener('click', selectSquare);
+            square.addEventListener('click', enterNumber);
+            document.getElementById('board').appendChild(square);
+        }
+    }
+}
