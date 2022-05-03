@@ -134,3 +134,8 @@ function getCoordinates(input) {
         col: Number(coords[1])
     }
 }
+
+function attachListeners() {
+    document.getElementsByClassName('game-action')[1].addEventListener('click', displayPuzzle);
+    document.getElementsByClassName('game-action')[2].addEventListener('click', solvePuzzle);
+}
