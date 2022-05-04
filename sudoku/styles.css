@@ -100,3 +100,64 @@ body {
     width: 320px;
     height: 526px;
 }
+
+
+.numpadButtons {
+    font-size: 30px;
+    width: 80px;
+    height: 80px;
+    margin-left: 9px;
+    margin-bottom: 9px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+#clock {
+    margin-left: 8px;
+    margin-bottom: 87px;
+    width: 260px;
+    height: 100px;
+    background-color: rgb(211, 211, 211, .2);
+    border-radius: 5px;
+}
+
+#deleteBtn {
+    width: 260px;
+    height: 50px;
+    background-color: rgb(255, 12, 12);
+    color: white;
+}
+
+.numpadButtons:hover {
+    background-color: rgb(128, 128, 127, .4);
+    color: white;
+}
+
+#deleteBtn:hover {
+    color: black;
+}
+
+.border-top {
+    border-top: 2px solid black;
+}
+
+.border-right {
+    border-right: 2px solid black;
+}
+
+.border-bottom {
+    border-bottom: 2px solid black;
+}
+
+.border-left {
+    border-left: 2px solid black;
+}
+
+.entered-numbers {
+    color: rgb(64, 155, 240);
+}
+
+.cell-color {
+    background-color: rgb(194, 225, 253);
+}
