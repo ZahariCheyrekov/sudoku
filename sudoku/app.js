@@ -36,3 +36,100 @@ function run() {
     displayNumpad();
     attachListeners();
 }
+
+function displayBoard() {
+    for (let row = 0; row < 9; row++) {
+        for (let col = 0; col < 9; col++) {
+
+            let square = document.createElement('div');
+            square.id = row.toString() + '-' + col.toString();
+            square.classList.add('squares');
+
+            if (row == 0) {
+                square.classList.add('border-top');
+            }
+            if (col == 0) {
+                square.classList.add('border-left');
+            }
+            if (row == 2 || row == 5 || row == 8) {
+                square.classList.add('border-bottom');
+            }
+            if (col == 2 || col == 5 || col == 8) {
+                square.classList.add('border-right');
+            }
+
+            square.addEventListener('click', selectSquare);
+            square.addEventListener('click', enterNumber);
+            document.getElementById('board').appendChild(square);
+        }
+    }
+}
+
+function displayPuzzle() {
+    solved = false;
+    const cells = getCells();
+
+    cells.forEach((cell) => {
+        const cellId = cell.id;
+        const coords = getCoordinates(cell);
+
+        if (puzzle[coords.row][coords.col] != 0) {
+            document.getElementById(cellId).textContent = puzzle[coords.row][coords.col];
+            cell.classList.add('displayPuzzleSquares');
+        } else {
+            document.getElementById(cellId).textContent = '';
+        }
+    });
+}
+
+function displayNumpad() {
+    for (let num = 1; num <= 10; num++) {
+        const button = document.createElement('button');
+
+        if (num == 10) {
+            button.textContent = 'X';
+            button.id = 'deleteBtn';
+        } else {
+            button.textContent = num;
+            button.id = `${num}-button`;
+        }
+
+        button.classList.add('numpadButtons');
+        button.addEventListener('click', selectNumber);
+        document.getElementById('numpad').appendChild(button);
+    }
+}
+
+function selectNumber() {
+    if (buttonSelected != null) {
+        buttonSelected.classList.remove('numSelected');
+    }
+    buttonSelected = this;
+    buttonSelected.classList.add('numSelected');
+}
+
+function selectSquare() {
+    if (squareSelected != this) {
+        if (squareSelected != null) {
+            squareSelected.classList.remove('cell-color');
+        }
+        squareSelected = this;
+    }
+    squareSelected.classList.add('cell-color');
+}
+
+function enterNumber() {
+    if (buttonSelected && !solved) {
+        const coords = getCoordinates(this);
+
+        if (puzzle[coords.row][coords.col] == 0) {
+            if (buttonSelected.textContent == 'X') {
+                this.innerText = '';
+                this.classList.remove('entered-numbers');
+            } else {
+                this.innerText = Number(buttonSelected.textContent);
+                this.classList.add('entered-numbers');
+            }
+        }
+    }
+}
