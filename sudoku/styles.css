@@ -161,3 +161,13 @@ body {
 .cell-color {
     background-color: rgb(194, 225, 253);
 }
+
+
+#footer {
+    background-size: 100%;
+    background-color: rgb(32, 46, 64);
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
