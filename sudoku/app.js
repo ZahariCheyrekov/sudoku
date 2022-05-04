@@ -160,3 +160,32 @@ function solvePuzzle() {
 
     solved = true;
 }
+
+function getCells() {
+    return document.querySelectorAll('.squares');
+}
+
+function cehekSolution() {
+    const cells = getCells();
+
+    for (const cell of cells) {
+        const coords = getCoordinates(cell);
+        const row = coords.row;
+        const col = coords.col;
+
+
+        if (document.getElementById(cell.id).textContent != solvedPuzzle[row][col]) {
+            alert('The solution is incorrect. Try again.');
+            return;
+        }
+    }
+    
+    solved = true;
+    alert('Congratulations! You solved the puzzle! :)');
+}
+
+function checkForErrors() {
+    //TODO: add implementation
+}
+
+//TODO: REFACTOR CODE!!! :)
