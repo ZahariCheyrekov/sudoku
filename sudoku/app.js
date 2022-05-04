@@ -133,3 +133,30 @@ function enterNumber() {
         }
     }
 }
+
+function getCoordinates(input) {
+    const coords = input.id.split('-');
+    return {
+        row: Number(coords[0]),
+        col: Number(coords[1])
+    }
+}
+
+function attachListeners() {
+    document.getElementsByClassName('game-action')[1].addEventListener('click', checkForErrors);
+    document.getElementsByClassName('game-action')[1].addEventListener('click', cehekSolution);
+    document.getElementsByClassName('game-action')[2].addEventListener('click', displayPuzzle);
+    document.getElementsByClassName('game-action')[3].addEventListener('click', solvePuzzle);
+}
+
+function solvePuzzle() {
+    const cells = getCells();
+
+    cells.forEach((cell) => {
+        const coords = getCoordinates(cell);
+        document.getElementById(cell.id).textContent = solvedPuzzle[coords.row][coords.col];
+        cell.classList.remove('entered-numbers');
+    });
+
+    solved = true;
+}
