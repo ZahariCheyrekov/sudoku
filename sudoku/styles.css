@@ -101,7 +101,6 @@ body {
     height: 526px;
 }
 
-
 .numpadButtons {
     font-size: 30px;
     width: 80px;
@@ -162,7 +161,6 @@ body {
     background-color: rgb(194, 225, 253);
 }
 
-
 #footer {
     background-size: 100%;
     background-color: rgb(32, 46, 64);
@@ -179,4 +177,8 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
+}
+
+#footer-main-name {
+    transform: translateY(50%);
 }
