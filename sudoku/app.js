@@ -40,3 +40,76 @@ function run() {
     startTimer();
     timerDiv = document.getElementById('sudoku-timer');
 }
+
+function displayBoard() {
+    solved = false;
+
+    for (let row = 0; row < 9; row++) {
+        for (let col = 0; col < 9; col++) {
+
+            let square = document.createElement('div');
+            square.id = row.toString() + '-' + col.toString();
+            square.classList.add('squares');
+
+            if (row == 0) {
+                square.classList.add('border-top');
+            }
+            if (col == 0) {
+                square.classList.add('border-left');
+            }
+            if (row == 2 || row == 5 || row == 8) {
+                square.classList.add('border-bottom');
+            }
+            if (col == 2 || col == 5 || col == 8) {
+                square.classList.add('border-right');
+            }
+
+            square.addEventListener('click', selectSquare);
+            square.addEventListener('click', enterNumber);
+            document.getElementById('board').appendChild(square);
+        }
+    }
+}
+
+function displayPuzzle() {
+    const cells = getCells();
+
+    cells.forEach((cell) => {
+        const cellId = cell.id;
+        const coords = getCoordinates(cell);
+
+        if (puzzle[coords.row][coords.col] != 0) {
+            document.getElementById(cellId).textContent = puzzle[coords.row][coords.col];
+            cell.classList.add('displayPuzzleSquares');
+        } else {
+            document.getElementById(cellId).textContent = '';
+        }
+    });
+}
+
+function displayNumpad() {
+    for (let num = 1; num <= 10; num++) {
+        const button = document.createElement('button');
+
+        if (num == 10) {
+            button.textContent = 'X';
+            button.id = 'deleteBtn';
+        } else {
+            button.textContent = num;
+            button.id = `${num}-button`;
+        }
+
+        button.classList.add('numpadButtons');
+        button.addEventListener('click', selectNumber);
+        document.getElementById('numpad').appendChild(button);
+    }
+}
+
+function attachListeners() {
+    document.getElementsByClassName('option-list-items')[2].addEventListener('click', cehekSolution);
+    document.getElementsByClassName('option-list-items')[3].addEventListener('click', displayPuzzle);
+    document.getElementsByClassName('option-list-items')[3].addEventListener('click', resetTimer);
+    document.getElementsByClassName('option-list-items')[4].addEventListener('click', solvePuzzle);
+    document.getElementById('timer-pause').addEventListener('click', () => { isPaused = true });
+    document.getElementById('timer-resume').addEventListener('click', () => { isPaused = false });
+}
