@@ -113,3 +113,36 @@ function attachListeners() {
     document.getElementById('timer-pause').addEventListener('click', () => { isPaused = true });
     document.getElementById('timer-resume').addEventListener('click', () => { isPaused = false });
 }
+
+function startTimer() {
+    setInterval(updateTimer, 1000);
+
+    function updateTimer() {
+        if (!isPaused) {
+            seconds++;
+
+            if (seconds > 59) {
+                seconds = 0;
+                minutes++;
+            }
+            if (minutes > 59) {
+                alert('Sorry, you wasn\'t able to solve the puzzle.');
+                isPaused = true;
+                minutes = 0;
+                seconds = '00';
+                timerDiv.textContent = `${minutes}:${seconds}`;
+                return;
+            }
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            timerDiv.textContent = `${minutes}:${seconds}`;
+        }
+    }
+}
+
+function selectNumber() {
+    if (buttonSelected != null) {
+        buttonSelected.classList.remove('numSelected');
+    }
+    buttonSelected = this;
+    buttonSelected.classList.add('numSelected');
+}
