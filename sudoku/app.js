@@ -147,6 +147,15 @@ function selectNumber() {
     buttonSelected.classList.add('numSelected');
 }
 
+function selectSquare() {
+    if (squareSelected != this) {
+        if (squareSelected != null) {
+            squareSelected.classList.remove('cell-color');
+        }
+        squareSelected = this;
+    }
+    squareSelected.classList.add('cell-color');
+}
 
 function enterNumber() {
     if (buttonSelected && !solved && !isPaused) {
@@ -173,3 +182,48 @@ function getCoordinates(input) {
         col: Number(coords[1])
     }
 }
+
+
+function solvePuzzle() {
+    const cells = getCells();
+
+    cells.forEach((cell) => {
+        const coords = getCoordinates(cell);
+        document.getElementById(cell.id).textContent = solvedPuzzle[coords.row][coords.col];
+        cell.classList.remove('entered-numbers');
+    });
+
+    solved = true;
+}
+
+function getCells() {
+    return document.querySelectorAll('.squares');
+}
+
+function cehekSolution() {
+    const cells = getCells();
+
+    for (const cell of cells) {
+        const coords = getCoordinates(cell);
+        const row = coords.row;
+        const col = coords.col;
+
+        if (document.getElementById(cell.id).textContent != solvedPuzzle[row][col]) {
+            alert('The solution is incorrect. Try again.');
+            return;
+        }
+    }
+
+    solved = true;
+    isPaused = true;
+    alert('Congratulations, you solved the puzzle! :)');
+}
+
+function resetTimer() {
+    minutes = 0;
+    seconds = '00';
+    isPaused = false
+    solved = false;
+}
+
+//TODO: REFACTOR CODE!!! :)
