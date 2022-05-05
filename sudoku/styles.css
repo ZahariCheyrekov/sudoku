@@ -1,4 +1,5 @@
 * {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -6,64 +7,59 @@
 
 html,
 body {
-    font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     height: 100%;
 }
 
 #select-bar {
-    height: 70px;
+    height: 85px;
 }
 
-#title_div {
-    float: left;
-    height: 100%;
-    width: 50%;
-    height: 60px;
+#header {
+    display: grid;
+    position: relative;
 }
 
-#title {
-    margin-left: 340px;
-    margin-top: 15px;
+#header-title {
     color: rgb(32, 46, 64);
+    font-size: 40px;
+    font-weight: bold;
+    transform: translate(21%, 50%);
+    position: relative;
 }
 
-#game-settings {
+#header-list-items {
+    width: 300px;
+    list-style: none;
     float: right;
-    height: 100%;
-    width: 50%;
-}
-
-#list-items {
-    margin: 25px 10px 0px 95px;
-}
-
-.game-action {
-    margin-right: 22px;
-    padding: 10px;
-    display: inline;
-    color: black;
+    display: flex;
     cursor: pointer;
-    justify-content: center;
-    border-radius: 5px;
+    transform: translate(-164%, -50%);
+    font-size: 20px;
 }
 
-.game-action:hover {
+.option-list-items {
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.option-list-items:hover {
     background-color: rgb(211, 211, 211, .2);
 }
 
 #sudoku-content {
+    height: 720px;
+    display: grid;
     border-top: 2px solid rgba(100, 63, 150, .1);
-    margin-bottom: 60px;
-    height: 600px;
 }
 
 #content-game {
-    width: max-content;
+    margin: 70px 0px 70px 0px;
+    align-self: center;
+    justify-self: center;
     height: 600px;
-    justify-content: center;
-    align-items: center;
-    margin: 60px 320px 0px 330px;
 }
 
 #board {
@@ -72,7 +68,6 @@ body {
     height: 500px;
     display: flex;
     flex-wrap: wrap;
-    margin-left: 15px;
 }
 
 .squares {
@@ -102,6 +97,7 @@ body {
 }
 
 .numpadButtons {
+    border: 1px solid black;
     font-size: 30px;
     width: 80px;
     height: 80px;
@@ -109,16 +105,56 @@ body {
     margin-bottom: 9px;
     cursor: pointer;
     border-radius: 5px;
-    border: none;
 }
 
-#clock {
+#timer {
     margin-left: 8px;
     margin-bottom: 87px;
     width: 260px;
     height: 100px;
     background-color: rgb(211, 211, 211, .2);
     border-radius: 5px;
+}
+
+#timer {
+    border: 1px solid black;
+    text-align: center;
+    font-size: 40px;
+}
+
+#sudoku-timer {
+    letter-spacing: 5px;
+    transform: translateY(60%);
+}
+
+#timer-settings {
+    transform: translateY(145%);
+    width: 260px;
+    height: 50px;
+}
+
+#timer-pause,
+#timer-resume {
+    border: 1px solid black;
+    background-color: rgb(211, 211, 211, .2);
+    font-size: 22px;
+    width: 48%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#timer-pause:hover,
+#timer-resume:hover {
+    background-color: rgb(128, 128, 127, .4);
+}
+
+#timer-pause {
+    float: left;
+}
+
+#timer-resume {
+    float: right;
 }
 
 #deleteBtn {
@@ -162,7 +198,6 @@ body {
 }
 
 #footer {
-    background-size: 100%;
     background-color: rgb(32, 46, 64);
     height: 140px;
     display: flex;
@@ -171,7 +206,6 @@ body {
 }
 
 #footer-info {
-    margin-left: 15px;
     width: 840px;
     height: 50px;
     justify-content: center;
@@ -180,5 +214,5 @@ body {
 }
 
 #footer-main-name {
-    transform: translateY(50%);
+    transform: translate(-2%, 50%);
 }
