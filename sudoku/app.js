@@ -226,4 +226,4 @@ function resetTimer() {
     solved = false;
 }
 
-//TODO: REFACTOR CODE!!! :)
+//TODO: REFACTOR THE CODE!!! :)
