@@ -146,3 +146,30 @@ function selectNumber() {
     buttonSelected = this;
     buttonSelected.classList.add('numSelected');
 }
+
+
+function enterNumber() {
+    if (buttonSelected && !solved && !isPaused) {
+        console.log(squareSelected);
+
+        const coords = getCoordinates(this);
+
+        if (puzzle[coords.row][coords.col] == 0) {
+            if (buttonSelected.textContent == 'X') {
+                this.innerText = '';
+                this.classList.remove('entered-numbers');
+            } else {
+                this.innerText = Number(buttonSelected.textContent);
+                this.classList.add('entered-numbers');
+            }
+        }
+    }
+}
+
+function getCoordinates(input) {
+    const coords = input.id.split('-');
+    return {
+        row: Number(coords[0]),
+        col: Number(coords[1])
+    }
+}
