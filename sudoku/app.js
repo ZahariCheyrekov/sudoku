@@ -1,13 +1,4 @@
 
-
-let buttonSelected;
-let squareSelected;
-let solved;
-let isPaused = false;
-let minutes = 0;
-let seconds = 0;
-let timerDiv;
-
 window.addEventListener('DOMContentLoaded', run);
 
 function run() {
