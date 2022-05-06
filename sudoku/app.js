@@ -1,3 +1,57 @@
+import { puzzles } from './puzzles/puzzles.js';
+
+let puzzleFirstIndex = getRandomPuzzle(0, puzzles.length);
+let puzzle = puzzles[puzzleFirstIndex][0];
+let solvedPuzzle = puzzles[puzzleFirstIndex][1];
+
+let buttonSelected;
+let squareSelected;
+let solved;
+let isPaused = false;
+let minutes = 0;
+let seconds = 0;
+let timerDiv;
+
+window.addEventListener('DOMContentLoaded', run);
+
+function run() {
+    displayBoard();
+    displayPuzzle();
+    displayNumpad();
+    attachListeners();
+    startTimer();
+    timerDiv = document.getElementById('sudoku-timer');
+}
+
+function displayBoard() {
+    solved = false;
+
+    for (let row = 0; row < 9; row++) {
+        for (let col = 0; col < 9; col++) {
+
+            let square = document.createElement('div');
+            square.id = row.toString() + '-' + col.toString();
+            square.classList.add('squares');
+
+            if (row == 0) {
+                square.classList.add('border-top');
+            }
+            if (col == 0) {
+                square.classList.add('border-left');
+            }
+            if (row == 2 || row == 5 || row == 8) {
+                square.classList.add('border-bottom');
+            }
+            if (col == 2 || col == 5 || col == 8) {
+                square.classList.add('border-right');
+            }
+
+            square.addEventListener('click', selectSquare);
+            square.addEventListener('click', enterNumber);
+            document.getElementById('board').appendChild(square);
+        }
+    }
+}
 
 function displayPuzzle() {
     const cells = getCells();
@@ -26,7 +80,6 @@ function displayNumpad() {
             button.textContent = num;
             button.id = `${num}-button`;
         }
-
         button.classList.add('numpadButtons');
         button.addEventListener('click', selectNumber);
         document.getElementById('numpad').appendChild(button);
@@ -34,12 +87,32 @@ function displayNumpad() {
 }
 
 function attachListeners() {
-    document.getElementsByClassName('option-list-items')[2].addEventListener('click', cehekSolution);
-    document.getElementsByClassName('option-list-items')[3].addEventListener('click', displayPuzzle);
-    document.getElementsByClassName('option-list-items')[3].addEventListener('click', resetTimer);
-    document.getElementsByClassName('option-list-items')[4].addEventListener('click', solvePuzzle);
+    const listItems = document.getElementsByClassName('option-list-items');
+    listItems[0].addEventListener('click', getNewPuzzle);
+    listItems[1].addEventListener('click', cehekSolution);
+    listItems[2].addEventListener('click', displayPuzzle);
+    listItems[2].addEventListener('click', resetTimer);
+    listItems[3].addEventListener('click', solvePuzzle);
+
     document.getElementById('timer-pause').addEventListener('click', () => { isPaused = true });
     document.getElementById('timer-resume').addEventListener('click', () => { isPaused = false });
+}
+
+function getNewPuzzle() {
+    solved = false;
+    resetTimer();
+
+    puzzleFirstIndex = getRandomPuzzle(0, puzzles.length);
+    puzzle = puzzles[puzzleFirstIndex][0];
+    solvedPuzzle = puzzles[puzzleFirstIndex][1];
+
+    const cells = getCells();
+
+    cells.forEach((cell) => {
+        cell.classList.remove('displayPuzzleSquares');
+    });
+
+    displayPuzzle();
 }
 
 function startTimer() {
@@ -87,8 +160,6 @@ function selectSquare() {
 
 function enterNumber() {
     if (buttonSelected && !solved && !isPaused) {
-        console.log(squareSelected);
-
         const coords = getCoordinates(this);
 
         if (puzzle[coords.row][coords.col] == 0) {
@@ -103,15 +174,6 @@ function enterNumber() {
     }
 }
 
-function getCoordinates(input) {
-    const coords = input.id.split('-');
-    return {
-        row: Number(coords[0]),
-        col: Number(coords[1])
-    }
-}
-
-
 function solvePuzzle() {
     const cells = getCells();
 
@@ -124,19 +186,13 @@ function solvePuzzle() {
     solved = true;
 }
 
-function getCells() {
-    return document.querySelectorAll('.squares');
-}
-
 function cehekSolution() {
     const cells = getCells();
 
     for (const cell of cells) {
         const coords = getCoordinates(cell);
-        const row = coords.row;
-        const col = coords.col;
 
-        if (document.getElementById(cell.id).textContent != solvedPuzzle[row][col]) {
+        if (document.getElementById(cell.id).textContent != solvedPuzzle[coords.row][coords.col]) {
             alert('The solution is incorrect. Try again.');
             return;
         }
@@ -154,4 +210,21 @@ function resetTimer() {
     solved = false;
 }
 
-//TODO: REFACTOR THE CODE!!! :)
+function getCoordinates(input) {
+    const coords = input.id.split('-');
+    return {
+        row: Number(coords[0]),
+        col: Number(coords[1])
+    }
+}
+
+function getCells() {
+    return document.querySelectorAll('.squares');
+}
+
+function getRandomPuzzle(minNumber, maxNumber) {
+    minNumber = Math.ceil(minNumber);
+    maxNumber = Math.floor(maxNumber);
+
+    return Math.floor(Math.random() * (maxNumber - minNumber) + minNumber);
+}
