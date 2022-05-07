@@ -1,8 +1,8 @@
-@import url(./styles/site.css);
-@import url(./styles/header.css);
-@import url(./styles/options.css);
-@import url(./styles/board.css);
-@import url(./styles/timer.css);
-@import url(./styles/numpad.css);
-@import url(./styles/article.css);
-@import url(./styles/footer.css);
+@import url(./styling/site.css);
+@import url(./styling/header.css);
+@import url(./styling/options.css);
+@import url(./styling/board.css);
+@import url(./styling/timer.css);
+@import url(./styling/numpad.css);
+@import url(./styling/article.css);
+@import url(./styling/footer.css);
