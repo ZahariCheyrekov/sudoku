@@ -1,0 +1,20 @@
+#header-list-items {
+    width: 300px;
+    list-style: none;
+    float: right;
+    display: flex;
+    cursor: pointer;
+    transform: translate(-35%, 50%);
+    font-size: 20px;
+}
+
+.option-list-items {
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.option-list-items:hover {
+    background-color: rgb(211, 211, 211, .2);
+}
