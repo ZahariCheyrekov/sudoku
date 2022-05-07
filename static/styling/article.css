@@ -1,0 +1,23 @@
+#article {
+    padding-right: 50px;
+    display: grid;
+    width: 880px;
+    height: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: rgb(32, 46, 64);
+    padding: 12px 0px 12px 0px;
+}
+
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: black;
+    margin: 20px 0px 20px 0px;
+    letter-spacing: 1px;
+    line-height: 20px;
+    word-spacing: 5px;
+}

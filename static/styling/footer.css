@@ -1,0 +1,43 @@
+#footer {
+    background-color: rgb(32, 46, 64);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+}
+
+#footer-info {
+    width: 840px;
+    height: 50px;
+    color: white;
+}
+
+#footer-main-name {
+    float: left;
+    color: white;
+    transform: translateX(-10%);
+}
+
+#footer-icons {
+    float: right;
+    width: 80px;
+    transform: translate(-50%, 50%);
+}
+
+#icon-links {
+    font-size: 22px;
+    list-style: none;
+    display: flex;
+}
+
+a {
+    color: white;
+}
+
+#github-icon,
+#linkedin-icon {
+    margin-left: 20px;
+}
