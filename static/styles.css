@@ -1,21 +1,4 @@
-* {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
-html,
-body {
-    overflow-x: hidden;
-    width: 100%;
-    height: 100%;
-}
-
-#select-bar {
-    display: grid;
-    height: 85px;
-}
 
 #header {
     margin: 0 auto;
