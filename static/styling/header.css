@@ -1,0 +1,17 @@
+#select-bar {
+    display: grid;
+    height: 85px;
+}
+
+#header {
+    margin: 0 auto;
+    min-width: 960px;
+}
+
+#header-title {
+    color: rgb(32, 46, 64);
+    font-size: 40px;
+    font-weight: bold;
+    transform: translate(27%, 50%);
+    float: left;
+}
