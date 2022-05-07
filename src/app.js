@@ -227,4 +227,4 @@ function getRandomPuzzle(minNumber, maxNumber) {
     maxNumber = Math.floor(maxNumber);
 
     return Math.floor(Math.random() * (maxNumber - minNumber) + minNumber);
-}
+} 
