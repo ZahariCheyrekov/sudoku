@@ -5,11 +5,17 @@
     box-sizing: border-box;
 }
 
-html,
 body {
-    width: 100vw;
-    height: 100vh;
     display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-flow: column nowrap;
+}
+
+main {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
 }
