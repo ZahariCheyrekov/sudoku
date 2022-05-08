@@ -29,7 +29,7 @@ function displayBoard() {
     for (let row = 0; row < 9; row++) {
         for (let col = 0; col < 9; col++) {
 
-            let square = document.createElement('div');
+            let square = document.createElement('li');
             square.id = row.toString() + '-' + col.toString();
             square.classList.add('squares');
 
@@ -227,4 +227,4 @@ function getRandomPuzzle(minNumber, maxNumber) {
     maxNumber = Math.floor(maxNumber);
 
     return Math.floor(Math.random() * (maxNumber - minNumber) + minNumber);
-} 
+}
