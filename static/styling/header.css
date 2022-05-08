@@ -1,11 +1,12 @@
-#select-bar {
-    display: grid;
+#header {
+    display: flex;
     height: 85px;
 }
 
-#header {
+#select-bar {
     margin: 0 auto;
     min-width: 960px;
+    height: 100px;
 }
 
 #header-title {
