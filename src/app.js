@@ -27,29 +27,19 @@ function displayBoard() {
     solved = false;
 
     for (let row = 0; row < 9; row++) {
-        for (let col = 0; col < 9; col++) {
+        let rowUlElement = document.createElement('ul');
 
+        for (let col = 0; col < 9; col++) {
             let square = document.createElement('li');
             square.id = row.toString() + '-' + col.toString();
             square.classList.add('squares');
 
-            if (row == 0) {
-                square.classList.add('border-top');
-            }
-            if (col == 0) {
-                square.classList.add('border-left');
-            }
-            if (row == 2 || row == 5 || row == 8) {
-                square.classList.add('border-bottom');
-            }
-            if (col == 2 || col == 5 || col == 8) {
-                square.classList.add('border-right');
-            }
-
             square.addEventListener('click', selectSquare);
             square.addEventListener('click', enterNumber);
-            document.getElementById('board').appendChild(square);
+
+            rowUlElement.appendChild(square);
         }
+        document.getElementById('board').appendChild(rowUlElement);
     }
 }
 

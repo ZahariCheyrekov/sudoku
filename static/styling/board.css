@@ -1,7 +1,7 @@
 #content-game {
     display: flex;
     flex-flow: row wrap;
-    gap: 2rem;
+    gap: 4rem;
     align-items: center;
     justify-content: center;
 }
@@ -41,12 +41,10 @@
 #board ul li:nth-child(3),
 #board ul li:nth-child(6) {
     border-right: 2px solid black;
-    ;
 }
 
 #board ul:nth-child(3n) {
     border-bottom: 2px solid black;
-    ;
 }
 
 #board ul:first-child {

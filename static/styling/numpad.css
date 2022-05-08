@@ -4,10 +4,8 @@
 }
 
 #numpad {
-    margin-left: 30px;
     float: left;
     width: 320px;
-    height: 526px;
 }
 
 .numpadButtons {
@@ -35,4 +33,4 @@
 
 #deleteBtn:hover {
     color: black;
-} 
+}
