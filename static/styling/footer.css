@@ -1,41 +1,39 @@
-#footer {
-    margin-top: auto;
+footer {
+    width: 100%;
+    height: 5rem;
     background-color: rgb(32, 46, 64);
     display: flex;
-    justify-content: center;
-    position: static;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid rgba(100, 63, 150, .1);
+    margin-top: auto;
 }
 
-#footer-info {
-    width: 840px;
-    height: 50px;
-    margin: 0;
+footer * {
     color: white;
 }
 
-#footer-main-name {
-    float: left;
-    color: white;
-    transform: translateX(-10%);
+footer h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 2;
 }
 
-#footer-icons {
-    float: right;
-    width: 80px;
-    transform: translate(-50%, 50%);
-}
-
-#icon-links {
-    font-size: 22px;
-    list-style: none;
+footer ul {
     display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    list-style: none;
 }
 
-a {
-    color: white;
+footer nav ul li {
+    cursor: pointer;
+    font-size: 2rem;
 }
 
 #github-icon,
 #linkedin-icon {
-    margin-left: 20px;
+    margin-left: 1.5rem;
+    font-size: 1.5rem;
 }
