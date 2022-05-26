@@ -1,17 +1,17 @@
-You can view the project from this link: https://zaharicheyrekov.github.io/Sudoku/
+# You can view the project from this link: https://zaharicheyrekov.github.io/Sudoku/
 
-About Sudoku
+# About Sudoku
 
 Sudoku is a logic-based, combinatorial number-placement puzzle.
 
 Number puzzles appeared in newspapers in the late 19th century, when French puzzle setters began experimenting with removing numbers from magic squares. Le Siècle, a Paris daily, published a partially completed 9x9 magic square with 3x3 subsquares on November 19, 1892. It was not a Sudoku because it contained double-digit numbers and required arithmetic rather than logic to solve, but it shared key characteristics: each row, column and subsquare added up to the same number.
 
 
-How to play
+# How to play
 
 In classic Sudoku, the objective is to fill a 9 x 9 grid with digits so that each column, each row, and each of the nine 3 x 3 subgrids that compose the grid (also called "boxes", "blocks", or "regions") contain all of the digits from 1 to 9. The puzzle setter provides a partially completed grid, which for a well-posed puzzle has a single solution.
 
-About this project
+# About this project
 
 This project is open source.
 
