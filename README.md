@@ -1,4 +1,4 @@
-# You can view the project from this link: https://zaharicheyrekov.github.io/Sudoku/
+You can view the project from this link: https://zaharicheyrekov.github.io/Sudoku/
 
 # About Sudoku
 
