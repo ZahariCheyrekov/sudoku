@@ -26,3 +26,7 @@ Open source promotes universal access via an open-source or free license to a pr
 # Solved puzzle
 
 ![sudoku-solved](https://user-images.githubusercontent.com/95768526/170731929-9c5fa37f-a3a7-4a67-85a0-d1a26d2f1813.png)
+
+# Sudoku info
+
+![sudoku info](https://user-images.githubusercontent.com/95768526/170733326-31ac2e2a-37b6-446a-b0c7-88fc08fc867d.png)
