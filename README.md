@@ -18,3 +18,11 @@ This project is open source.
 Open source is source code that is made freely available for possible modification and redistribution. Products include permission to use the source code, design documents, or content of the product. The open-source model is a decentralized software development model that encourages open collaboration.
 
 Open source promotes universal access via an open-source or free license to a product's design or blueprint, and universal redistribution of that design or blueprint. Before the phrase open source became widely adopted, developers and producers have used a variety of other terms. Open source gained hold with the rise of the Internet. The open-source software movement arose to clarify copyright, licensing, domain, and consumer issues.
+
+# Sudoku puzzle
+
+![Sudoku-laptop](https://user-images.githubusercontent.com/95768526/170731850-8bab0a89-7272-47f2-8a94-5d2e2d65fee5.png)
+
+# Solved puzzle
+
+![sudoku-solved](https://user-images.githubusercontent.com/95768526/170731929-9c5fa37f-a3a7-4a67-85a0-d1a26d2f1813.png)
